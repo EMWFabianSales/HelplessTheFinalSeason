@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4612.8105, g: 2948.162, b: 2171.0078, a: 1}
+  m_IndirectSpecularColor: {r: 4608.163, g: 2946.2344, b: 2170.5352, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 240391832}
   - component: {fileID: 240391831}
   - component: {fileID: 240391830}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,6 +350,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OutlineMat: {fileID: 2100000, guid: 83d072917e3ddf64b845eb7a564ff7ab, type: 2}
+  paperTextures:
+  - {fileID: 2800000, guid: 89fad7d743c8e8a41b24da92a0a9aa00, type: 3}
+  - {fileID: 2800000, guid: ee5b9af8ed05e5c4aa5f5c4a0cc8b39c, type: 3}
+  - {fileID: 2800000, guid: e57734ee6aefb224c871bf10202df1f0, type: 3}
+  - {fileID: 2800000, guid: 4f84ad0fff062204ab9a63a4b48071aa, type: 3}
+  - {fileID: 2800000, guid: 1fa447f8b54ef314dabc9a9eb9bf301e, type: 3}
+  - {fileID: 2800000, guid: d1fb3d97dbb6b704288302c5331af2bf, type: 3}
+  - {fileID: 2800000, guid: dfca00fe90a28764a86392f2e8ec1781, type: 3}
+  - {fileID: 2800000, guid: c14f189133fba5648a70b491fdf23c95, type: 3}
+  - {fileID: 2800000, guid: 0f2c754850a71a344b5a40f296b1db8e, type: 3}
+  - {fileID: 2800000, guid: 34f74d8aeeb32574880d315210a5f432, type: 3}
+  - {fileID: 2800000, guid: e38b34cc6b9e21243a29edab19920b8e, type: 3}
+  - {fileID: 2800000, guid: 3198902e6f86e1645ab774047de873e4, type: 3}
+  - {fileID: 2800000, guid: 5f8cfb7f6c31ab14fa8b9073d0c85684, type: 3}
+  - {fileID: 2800000, guid: 961333f28b70c4349ae7c6db18a02d11, type: 3}
+  - {fileID: 2800000, guid: a8ed2a1dc831c784ea50f1a044ae3a7c, type: 3}
+  - {fileID: 2800000, guid: ddc58d1cb434d7f4a979813212beda3a, type: 3}
+  - {fileID: 2800000, guid: ddd4f71f9651a7849b53f43a4cac6dd6, type: 3}
+  - {fileID: 2800000, guid: daf3d2d385746974ea6f79bdf4095d87, type: 3}
+  bookTextures:
+  - {fileID: 2800000, guid: e511bdddf21136149ab52a06908685a5, type: 3}
+  - {fileID: 2800000, guid: 107e43d20b77292468015981a5b11677, type: 3}
+  - {fileID: 2800000, guid: e9930335e5835894c8c9b56c00e6f6e2, type: 3}
+  - {fileID: 2800000, guid: 0bb95b016fb3f4d43a4d83361f23409a, type: 3}
+  - {fileID: 2800000, guid: a6302dc414092b34b9d1b25ad97d1586, type: 3}
+  - {fileID: 2800000, guid: 971808d9935250547b6ffaa2d052637c, type: 3}
+  - {fileID: 2800000, guid: 56a3a4d7e63e34a40b367a2b33a61f4f, type: 3}
+  - {fileID: 2800000, guid: 710c6fe4bbfb17545a35393d229a756c, type: 3}
+  - {fileID: 2800000, guid: b04c4d7ec1a336045b93d9783ac28f5f, type: 3}
+  clutterLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  clutterRange: 10
+  clutterPiles: 200
+  spread: 2
+  attemptThreshhold: 30
+  clutterPrefabs:
+  - {fileID: 2382488050095197142, guid: 9b9690035fa03aa48853c8fe0c16d7ac, type: 3}
+  - {fileID: 6732108297935587039, guid: 8a6bb50afdb274d46868bfce4e0f36f0, type: 3}
+  - {fileID: 7327156124306832072, guid: 99e9508e977a1524e98e6d971b67bee1, type: 3}
+  - {fileID: 8277855406109918251, guid: cd936b67eaa260f4996491b07dbff17a, type: 3}
+  - {fileID: 1743700440847433563, guid: eea92ca444b4c684f85f475f46c6e695, type: 3}
+  clutterObjects: []
 --- !u!4 &589980215
 Transform:
   m_ObjectHideFlags: 0
@@ -804,6 +847,7 @@ GameObject:
   - component: {fileID: 1196628558}
   - component: {fileID: 1196628557}
   - component: {fileID: 1196628556}
+  - component: {fileID: 1196628560}
   m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
@@ -890,6 +934,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1196628560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196628555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35b23acfa629e04fbc5d72bf6223967, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjectInteraction: 0
 --- !u!1 &1214152989
 GameObject:
   m_ObjectHideFlags: 1
@@ -970,16 +1027,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 923036882}
-  raw_Mouse_Val: {x: 0, y: 0}
   mouseSensitivity: 20
-  raw_movement_vector: {x: 0, y: 0}
+  lerpTime: 0.5
   IsSprinting: 0
-  InteractableLayer:
-    serializedVersion: 2
-    m_Bits: 64
   walk_speed: 5
   run_speed: 8
   current_speed: 0
+  InteractableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  canInteract: 0
 --- !u!114 &1758795271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1111,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d0d992f7-bd30-44f8-b1f4-1866f2d1eedc
     m_ActionName: thefinalseason/CameraControl[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d450ff6-f127-489f-ab19-67867e18d546
+    m_ActionName: thefinalseason/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: thefinalseason

@@ -6,20 +6,32 @@ public class playercontroller : MonoBehaviour
 {
     public Transform playerCamera; 
     CharacterController charcon;
-    public Vector2 raw_Mouse_Val;
+    //Camera Settings
+    Vector2 raw_Mouse_Val;
+    [Space(10)]
     public float mouseSensitivity;
     float xRot;
-    public Vector2 raw_movement_vector;
+    //camera bopping
+    Vector3 newCameraPos;
+    public float lerpTime;
+    //Movement Settings
+    Vector2 raw_movement_vector;
+    [Space(10)]
     public bool IsSprinting;
-
-    public LayerMask InteractableLayer;
-
     public float walk_speed;
     public float run_speed;
     public float current_speed;
 
+    //raycast settings
+    public LayerMask InteractableLayer;
+    public bool canInteract;
+    GameObject rayCastSelectedItem = null;
+    Material[] hitMats;
+
+    //
     void Awake(){
         charcon = GetComponent<CharacterController>();
+        newCameraPos = playerCamera.position;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -34,6 +46,7 @@ public class playercontroller : MonoBehaviour
     void Update()
     {
         move_player();
+        //viewBobbing();
         update_cameraRot();
         Raycast_check();
     }
@@ -41,9 +54,19 @@ public class playercontroller : MonoBehaviour
     public void Raycast_check(){
         RaycastHit hit;
         if(Physics.Raycast(playerCamera.position, playerCamera.forward, out hit, 5, InteractableLayer)){
-            print(hit.transform.gameObject.name);
-            Material[] hitMats = hit.transform.GetComponent<MeshRenderer>().materials;
-            hitMats[hitMats.Length - 1].SetFloat("_Thickness", 1);
+            if (rayCastSelectedItem != hit.transform.gameObject){
+                rayCastSelectedItem = hit.transform.gameObject;
+            }
+            hitMats = rayCastSelectedItem.GetComponent<MeshRenderer>().materials;
+            hitMats[hitMats.Length - 1].SetFloat("_Thickness", .05f);
+            canInteract = true;
+        }else{
+            if (hitMats != null){
+            hitMats[hitMats.Length - 1].SetFloat("_Thickness", 0);
+            hitMats = null;
+            rayCastSelectedItem = null;
+            canInteract = false;
+            }
         }
     }
 
@@ -55,6 +78,22 @@ public class playercontroller : MonoBehaviour
         playerCamera.localRotation =  Quaternion.Euler(xRot,0,0);
         
         transform.Rotate(Vector3.up * mouseVal.x);
+    }
+
+    public void viewBobbing(){
+        float viewbobheight = 0;
+
+        if(charcon.velocity.magnitude > 0.01 && !IsSprinting){
+            if(playerCamera.position.y == newCameraPos.y){
+                viewbobheight = Random.Range(0.25f,0.75f);
+                newCameraPos = new Vector3(transform.position.x, transform.position.y + viewbobheight, transform.position.z);
+            }
+        }else{
+            newCameraPos = new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z);
+        }
+
+        playerCamera.position = Vector3.Lerp(playerCamera.position, newCameraPos, lerpTime * Time.deltaTime);
+
     }
 
     public void move_player(){
@@ -88,4 +127,9 @@ public class playercontroller : MonoBehaviour
         raw_Mouse_Val = ctx.ReadValue<Vector2>();
     }
 
+    public void InteractionSend(InputAction.CallbackContext ctx){
+        if(canInteract && ctx.started){
+            
+        }
+    }
 }
