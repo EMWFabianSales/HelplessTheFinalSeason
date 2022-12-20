@@ -65,6 +65,8 @@ public class gameManager : MonoBehaviour
                         foreach (GameObject item in clutterObjects){
                             if(item != generatedClutter){
                                 if(Vector3.Distance(item.transform.localPosition, generatedClutter.transform.localPosition) > spread){
+                                    print(Vector3.Distance(item.transform.localPosition, generatedClutter.transform.localPosition));
+
                                     positionValid = true;
                                 }
                             }

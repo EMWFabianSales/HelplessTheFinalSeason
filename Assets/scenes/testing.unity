@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4608.163, g: 2946.2344, b: 2170.5352, a: 1}
+  m_IndirectSpecularColor: {r: 4612.0156, g: 2948.1094, b: 2171.254, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -382,10 +382,10 @@ MonoBehaviour:
   clutterLayer:
     serializedVersion: 2
     m_Bits: 128
-  clutterRange: 10
-  clutterPiles: 200
+  clutterRange: 8.74
+  clutterPiles: 30
   spread: 2
-  attemptThreshhold: 30
+  attemptThreshhold: 10
   clutterPrefabs:
   - {fileID: 2382488050095197142, guid: 9b9690035fa03aa48853c8fe0c16d7ac, type: 3}
   - {fileID: 6732108297935587039, guid: 8a6bb50afdb274d46868bfce4e0f36f0, type: 3}
