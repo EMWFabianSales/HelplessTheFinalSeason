@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4612.0156, g: 2948.1094, b: 2171.254, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -392,6 +392,9 @@ MonoBehaviour:
   - {fileID: 7327156124306832072, guid: 99e9508e977a1524e98e6d971b67bee1, type: 3}
   - {fileID: 8277855406109918251, guid: cd936b67eaa260f4996491b07dbff17a, type: 3}
   - {fileID: 1743700440847433563, guid: eea92ca444b4c684f85f475f46c6e695, type: 3}
+  - {fileID: 8011694258211287257, guid: e25300f435bf4b04e9228632a28f1eeb, type: 3}
+  - {fileID: 8329922499910947739, guid: 597ed88253cdfb24b884cc55a212a882, type: 3}
+  - {fileID: 2496940538368943954, guid: 44a494fa2669cd84490f45bd788953f3, type: 3}
   clutterObjects: []
 --- !u!4 &589980215
 Transform:
@@ -625,6 +628,37 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!1 &843048293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843048294}
+  m_Layer: 0
+  m_Name: groundchecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &843048294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843048293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1758795273}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &923036879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,14 +1063,17 @@ MonoBehaviour:
   playerCamera: {fileID: 923036882}
   mouseSensitivity: 20
   lerpTime: 0.5
-  IsSprinting: 0
   walk_speed: 5
   run_speed: 8
-  current_speed: 0
+  groundChecker: {fileID: 0}
+  groundCheckRad: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  gravity: 9
   InteractableLayer:
     serializedVersion: 2
     m_Bits: 64
-  canInteract: 0
 --- !u!114 &1758795271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1171,7 @@ Transform:
   m_Children:
   - {fileID: 425888795}
   - {fileID: 923036882}
+  - {fileID: 843048294}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

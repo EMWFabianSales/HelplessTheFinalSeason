@@ -17,18 +17,26 @@ public class playercontroller : MonoBehaviour
     //Movement Settings
     Vector2 raw_movement_vector;
     [Space(10)]
-    public bool IsSprinting;
+    bool IsSprinting;
     public float walk_speed;
     public float run_speed;
-    public float current_speed;
+    float current_speed;
+
+    //gravity stuffs
+    public Transform groundChecker;
+    public float groundCheckRad;
+    public LayerMask groundLayer;
+    bool grounded;
+    public float gravity;
+    Vector3 gravVel;
 
     //raycast settings
     public LayerMask InteractableLayer;
-    public bool canInteract;
+    bool canInteract;
     GameObject rayCastSelectedItem = null;
     Material[] hitMats;
 
-    //
+
     void Awake(){
         charcon = GetComponent<CharacterController>();
         newCameraPos = playerCamera.position;
@@ -45,10 +53,18 @@ public class playercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GroundCheck();
         move_player();
         //viewBobbing();
         update_cameraRot();
         Raycast_check();
+    }
+
+    public void GroundCheck(){
+        //RaycastHit hit;
+        //if(Physics.SphereCast(groundChecker, groundCheckRad, groundCheckRad, )){
+
+        //}
     }
 
     public void Raycast_check(){
@@ -98,6 +114,10 @@ public class playercontroller : MonoBehaviour
 
     public void move_player(){
 
+        if (grounded){
+            gravVel.y = -2;
+        }
+        
         if (IsSprinting){
             current_speed = run_speed;
         }else{
@@ -108,6 +128,10 @@ public class playercontroller : MonoBehaviour
         + transform.right * raw_movement_vector.x) * current_speed * Time.deltaTime;
 
         charcon.Move(calculatedMovement);
+
+        gravVel.y -= gravity * Time.deltaTime;
+
+        charcon.Move(gravVel * Time.deltaTime);
     }
 
     public void getRawMovementVectors(InputAction.CallbackContext ctx){
