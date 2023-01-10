@@ -1,8 +1,8 @@
 # HelplessTheFinalSeason
 
-##Changelog
+## Changelog
 
-###January 9th 2023
+### January 9th 2023
 Began modeling Nao's Map, still heavily work in progress
 so far only got the first floor's floor and the floor of the Church Building done.
 
