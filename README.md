@@ -13,3 +13,7 @@ side note, for the Church Building we used a mirror filter because nothing says 
 soon we're gonna run into a huge problem, textures, fortunately we should have some textures that could work for the church, that being said we are going to need to go on a goose hunt for textures to toss into the main assylum building
 
 -Mina
+
+### January 10th 2023 10:45 PM PST
+Modified the GenerateClutter function in the GameManagerScript, not finished yet, but have begun adding seperate Generation passes to allow for a set amount of each kind of trash
+also looking into making an instanceable version of the script to allow individual groups of clutter completely independent of one another allowing for different sections to have more of one kind of clutter than another

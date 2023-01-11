@@ -9,20 +9,26 @@ public class gameManager : MonoBehaviour
     public List<Texture2D> paperTextures = new List<Texture2D>();
     public List<Texture2D> bookTextures = new List<Texture2D>();
     
+    public List<proceduralGenerationGroup> procGenGroups = new List<proceduralGenerationGroup>();
     //procedural clutter settings
-    public LayerMask clutterLayer;
+    /*public LayerMask clutterLayer;
+    
+    public GameObject[] clutterPrefabs;
+
+    
+
     public float clutterRange;
     public int clutterPiles;
     public float spread;
     public int attemptThreshhold;
-    public GameObject[] clutterPrefabs;
     public List<GameObject> clutterObjects = new List<GameObject>();
+    */
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        generateClutter();
+        //generateClutter();
     }
 
     // Update is called once per frame
@@ -36,7 +42,7 @@ public class gameManager : MonoBehaviour
     }
 
     //generate clutter
-    public void generateClutter(){
+    /*public void generateClutter(){
         for (int i = 0; i < clutterPiles; i++)
         {
             int randomPile = Random.Range(0, clutterPrefabs.Length);
@@ -83,9 +89,13 @@ public class gameManager : MonoBehaviour
         }
     }
 
+    */
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(Vector3.zero, new Vector3(clutterRange, 1f, clutterRange));
+        foreach (var group in procGenGroups)
+        {
+            Gizmos.DrawWireCube(group.GroupPosition, new Vector3(group.groupSize, 1, group.groupSize));
+        }
     }
 }
