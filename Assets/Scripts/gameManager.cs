@@ -8,8 +8,9 @@ public class gameManager : MonoBehaviour
     public Material OutlineMat;
     public List<Texture2D> paperTextures = new List<Texture2D>();
     public List<Texture2D> bookTextures = new List<Texture2D>();
-    
+    public List<GameObject> procGenPrefabs = new List<GameObject>();
     public List<proceduralGenerationGroup> procGenGroups = new List<proceduralGenerationGroup>();
+    private List<GameObject> procGenGroupObjs = new List<GameObject>();
     //procedural clutter settings
     /*public LayerMask clutterLayer;
     
@@ -28,7 +29,7 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        //generateClutter();
+        generateClutter();
     }
 
     // Update is called once per frame
@@ -37,6 +38,37 @@ public class gameManager : MonoBehaviour
         
     }
 
+    //generate clutter
+    public void generateClutter(){
+        //loop for every item in procGenGroups List
+        foreach (var group in procGenGroups)
+        {
+            //create a gameobject for item in list
+            GameObject groupObject = new GameObject($"proc_Gen_Group_{procGenGroups.IndexOf(group)}");
+            //set item's gameobject parent to Game Manager Object
+            groupObject.transform.SetParent(transform);
+            //adds group object to list of group objects
+            procGenGroupObjs.Add(groupObject);
+        }
+        //loop for first generation pass (Medical supplies)
+        foreach (var group in procGenGroups)
+        {
+            for (int i = 0; i < group.medicalPiles; i++)
+            {
+                //instanciates medical prefab at center of Group Object
+                GameObject generatedMedItem = Instantiate(procGenPrefabs[0], group.GroupPosition, Quaternion.Euler(0,0,0),procGenGroupObjs[procGenGroups.IndexOf(group)].transform);
+                //adds instance to group's Medical object list
+                group.medicalObjects.Add(generatedMedItem);
+                //sets position of medical object Instance randomly, relative to center of group object
+                generatedMedItem.transform.Translate(new Vector3(
+                    Random.Range(-group.groupArea/2f,group.groupArea/2f),
+                    0f,
+                    Random.Range(-group.groupArea/2f,group.groupArea/2f)
+                ));
+            }   
+        }
+    }
+    //Interactions parser
     public void InteractionHandler(GameObject InteractionObject){
         InteractionObject.GetComponent<PlayerInteractableScript>().onPlayerInteraction();
     }
@@ -92,10 +124,10 @@ public class gameManager : MonoBehaviour
     */
     void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
         foreach (var group in procGenGroups)
         {
-            Gizmos.DrawWireCube(group.GroupPosition, new Vector3(group.groupSize, 1, group.groupSize));
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireCube(group.GroupPosition, new Vector3(group.groupArea, .25f, group.groupArea));
         }
     }
 }

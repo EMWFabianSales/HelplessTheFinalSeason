@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4612.787, g: 2948.166, b: 2171.0234, a: 1}
+  m_IndirectSpecularColor: {r: 4612.787, g: 2948.168, b: 2171.0273, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,54 +367,37 @@ MonoBehaviour:
   OutlineMat: {fileID: 0}
   paperTextures: []
   bookTextures: []
+  procGenPrefabs:
+  - {fileID: 7327156124306832072, guid: 99e9508e977a1524e98e6d971b67bee1, type: 3}
+  - {fileID: 8329922499910947739, guid: 597ed88253cdfb24b884cc55a212a882, type: 3}
   procGenGroups:
-  - GroupPosition: {x: -7.35, y: 5.85, z: 0}
-    groupSize: 4.73
+  - GroupPosition: {x: 2.55, y: 0, z: 0}
+    groupArea: 4.3
     paperPiles: 0
     paperObjects: []
     bookPiles: 0
     bookObjects: []
-    medicalPiles: 0
+    medicalPiles: 25
     medicalObjects: []
     roublePiles: 0
     roubleObjects: []
-  - GroupPosition: {x: 0, y: 0, z: 0}
-    groupSize: 6.37
+  - GroupPosition: {x: -3.84, y: 2.65, z: 0}
+    groupArea: 4.3
     paperPiles: 0
     paperObjects: []
     bookPiles: 0
     bookObjects: []
-    medicalPiles: 0
+    medicalPiles: 37
     medicalObjects: []
     roublePiles: 0
     roubleObjects: []
-  - GroupPosition: {x: 0, y: 0, z: 0}
-    groupSize: 0
+  - GroupPosition: {x: -3.84, y: 4.13, z: 2.99}
+    groupArea: 4.3
     paperPiles: 0
     paperObjects: []
     bookPiles: 0
     bookObjects: []
-    medicalPiles: 0
-    medicalObjects: []
-    roublePiles: 0
-    roubleObjects: []
-  - GroupPosition: {x: 0, y: 0, z: 0}
-    groupSize: 0
-    paperPiles: 0
-    paperObjects: []
-    bookPiles: 0
-    bookObjects: []
-    medicalPiles: 0
-    medicalObjects: []
-    roublePiles: 0
-    roubleObjects: []
-  - GroupPosition: {x: 0, y: 0, z: 0}
-    groupSize: 0
-    paperPiles: 0
-    paperObjects: []
-    bookPiles: 0
-    bookObjects: []
-    medicalPiles: 0
+    medicalPiles: 7
     medicalObjects: []
     roublePiles: 0
     roubleObjects: []
