@@ -17,11 +17,13 @@ soon we're gonna run into a huge problem, textures, fortunately we should have s
 
 ### January 10th 2023 10:45 PM PST
 Host: Shean
+
 Modified the GenerateClutter function in the GameManagerScript, not finished yet, but have begun adding seperate Generation passes to allow for a set amount of each kind of trash
 also looking into making an instanceable version of the script to allow individual groups of clutter completely independent of one another allowing for different sections to have more of one kind of clutter than another
 
 ### January 12th 2023 10:12 PM PST
 Host: Shean
+
 Continued to modify the GenerateClutter function in the GameManagerScript, created a list object which creates new instances of procedurally generated zones. This Instatiated Script allows for each individual zone to be modified from position to zone size, currently this zone can only generate Medical Prefabs, this Instanciable script also allows for the dev to manually modify how much of each type of item generates, currently the script only generates Medical Supplies, but has options for Books, Papers, Rubble(W.I.P), planned to add is other small pieces of trash such as bottles and wrappers.
 
 Also added comments to make reading code easier, general rule of thumb is to write comments as if someone else **WILL** read, since regardless it's future you who will have to deal with it.
