@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 4612.787, g: 2948.168, b: 2171.0273, a: 1}
+  m_IndirectSpecularColor: {r: 4610.6406, g: 2947.9336, b: 2171.543, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,40 +367,44 @@ MonoBehaviour:
   OutlineMat: {fileID: 0}
   paperTextures: []
   bookTextures: []
-  procGenPrefabs:
+  procMedPaperGenPrefabs:
+  - {fileID: 8277855406109918251, guid: cd936b67eaa260f4996491b07dbff17a, type: 3}
+  - {fileID: 1743700440847433563, guid: eea92ca444b4c684f85f475f46c6e695, type: 3}
+  procBookGenPrefabs:
+  - {fileID: 2382488050095197142, guid: 9b9690035fa03aa48853c8fe0c16d7ac, type: 3}
+  - {fileID: 6732108297935587039, guid: 8a6bb50afdb274d46868bfce4e0f36f0, type: 3}
+  procMedGenPrefabs:
   - {fileID: 7327156124306832072, guid: 99e9508e977a1524e98e6d971b67bee1, type: 3}
+  - {fileID: 8011694258211287257, guid: e25300f435bf4b04e9228632a28f1eeb, type: 3}
   - {fileID: 8329922499910947739, guid: 597ed88253cdfb24b884cc55a212a882, type: 3}
+  - {fileID: 2496940538368943954, guid: 44a494fa2669cd84490f45bd788953f3, type: 3}
+  procRoubleGenPrefabs: []
+  procLitterGenPrefabs: []
   procGenGroups:
   - GroupPosition: {x: 2.55, y: 0, z: 0}
-    groupArea: 4.3
+    groupArea: 5
     paperPiles: 0
-    paperObjects: []
     bookPiles: 0
-    bookObjects: []
-    medicalPiles: 25
-    medicalObjects: []
+    medicalPiles: 45
     roublePiles: 0
-    roubleObjects: []
-  - GroupPosition: {x: -3.84, y: 2.65, z: 0}
-    groupArea: 4.3
+    litterPiles: 0
+    GeneratedItems: []
+  - GroupPosition: {x: -13.2, y: 2.65, z: 0}
+    groupArea: 10
     paperPiles: 0
-    paperObjects: []
-    bookPiles: 0
-    bookObjects: []
-    medicalPiles: 37
-    medicalObjects: []
+    bookPiles: 83
+    medicalPiles: 0
     roublePiles: 0
-    roubleObjects: []
-  - GroupPosition: {x: -3.84, y: 4.13, z: 2.99}
-    groupArea: 4.3
-    paperPiles: 0
-    paperObjects: []
+    litterPiles: 0
+    GeneratedItems: []
+  - GroupPosition: {x: 21.74, y: 2.65, z: 0}
+    groupArea: 20
+    paperPiles: 210
     bookPiles: 0
-    bookObjects: []
-    medicalPiles: 7
-    medicalObjects: []
+    medicalPiles: 0
     roublePiles: 0
-    roubleObjects: []
+    litterPiles: 0
+    GeneratedItems: []
 --- !u!1 &750231008
 GameObject:
   m_ObjectHideFlags: 0
