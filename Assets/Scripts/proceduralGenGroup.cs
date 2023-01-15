@@ -5,9 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class proceduralGenerationGroup
 {
+    //Group Area Position
     public Vector3 GroupPosition;
+    //Generation Area
     public float groupArea;
-    [Space(200f)]
+    //Attempts for Position Validation
+    public int generationAttempts;
+    //Distance from another object for generated item to be valid
+    public float validDistance;
     //PaperPiles
     public int paperPiles;
     //Book Piles

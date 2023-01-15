@@ -46,3 +46,8 @@ We also went ahead and made the process of importing textures into the `GameMana
 Seperately we've also started planning where to place specific **Generation Groups** on the Map, next update will contain a prototype version of the map with these Generation groups placed at specific locations (See Gen Map Below).
 
 ![GenMap](/Assets/Models/Map_Dev/floor1GenMap.png)
+
+### January 15th 2023 12:03 AM PST
+**Host: Shean**
+
+`Postion Validation` has been added to the `GenerateClutter` function as well as the necessary variables in the `ProceduralGenGroup` Script to allow for generated items to self validate on instantiation.
