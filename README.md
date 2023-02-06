@@ -46,3 +46,8 @@ We also went ahead and made the process of importing textures into the `GameMana
 Seperately we've also started planning where to place specific **Generation Groups** on the Map, next update will contain a prototype version of the map with these Generation groups placed at specific locations (See Gen Map Below).
 
 ![GenMap](/Assets/Models/Map_Dev/floor1GenMap.png)
+
+### February 6th 2023 12:42 PM PST
+**Host: Shean** 
+
+added very simple ai, along with the variables for making a more complex ai, which will be worked on based on the reverse engineered script.
