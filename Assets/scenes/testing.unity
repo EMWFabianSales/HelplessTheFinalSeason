@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 4612.0625, g: 2948.1191, b: 2171.2305, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 4610.6406, g: 2947.957, b: 2171.5703, a: 1}
+>>>>>>> 3ba00f38af87e7cef0b9c1447c85f3eeede167b0
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -344,8 +348,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589980213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -381,11 +385,21 @@ MonoBehaviour:
   procRoubleGenPrefabs: []
   procLitterGenPrefabs: []
   procGenGroups:
+<<<<<<< HEAD
   - GroupPosition: {x: 0, y: 0, z: 0}
     groupArea: 4
     paperPiles: 0
     bookPiles: 140
     medicalPiles: 0
+=======
+  - GroupPosition: {x: 2.55, y: 0, z: 0}
+    groupArea: 5
+    generationAttempts: 55
+    validDistance: 10
+    paperPiles: 0
+    bookPiles: 0
+    medicalPiles: 47
+>>>>>>> 3ba00f38af87e7cef0b9c1447c85f3eeede167b0
     roublePiles: 0
     litterPiles: 0
     GeneratedItems: []

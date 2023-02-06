@@ -47,7 +47,14 @@ Seperately we've also started planning where to place specific **Generation Grou
 
 ![GenMap](/Assets/Models/Map_Dev/floor1GenMap.png)
 
+<<<<<<< HEAD
 ### February 6th 2023 12:42 PM PST
 **Host: Shean** 
 
 added very simple ai, along with the variables for making a more complex ai, which will be worked on based on the reverse engineered script.
+=======
+### January 15th 2023 12:03 AM PST
+**Host: Shean**
+
+`Postion Validation` has been added to the `GenerateClutter` function as well as the necessary variables in the `ProceduralGenGroup` Script to allow for generated items to self validate on instantiation.
+>>>>>>> 3ba00f38af87e7cef0b9c1447c85f3eeede167b0

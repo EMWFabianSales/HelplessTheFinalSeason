@@ -107,10 +107,13 @@ public class gameManager : MonoBehaviour
 
             for (int i = 0; i < items; i++)
             {
+                bool IsValid = false;
+                int attempts = 0;
                 //instanciates prefab at center of Group Object
                 GameObject generatedItem = Instantiate(prefabpool[Random.Range(0, prefabpool.Count)], group.GroupPosition, Quaternion.Euler(0,0,0),procGenGroupObjs[procGenGroups.IndexOf(group)].transform);
                 //adds instance to group's object list
                 group.GeneratedItems.Add(generatedItem);
+                
                 //sets position of object Instance randomly, relative to center of group object
                 generatedItem.transform.Translate(new Vector3(
                     Random.Range(-group.groupArea/2f,group.groupArea/2f),
@@ -123,6 +126,32 @@ public class gameManager : MonoBehaviour
                     Random.Range(0,360),
                     0
                 );
+
+                //Position Validation loop
+                while(IsValid = false || attempts == group.generationAttempts){
+                    //if Generated Item is First in list, skip validation
+                    if(generatedItem == group.GeneratedItems[0]){
+                        IsValid = true;
+                    }
+                    
+                    //validate distance of generated object against position of all previously generated objects in group
+                    for (int o = 0; o < group.GeneratedItems.Count; o++)
+                    {
+                        if (generatedItem == group.GeneratedItems[o] || Vector3.Distance(generatedItem.transform.position, group.GeneratedItems[o].transform.position) < group.validDistance){
+                            IsValid = true;
+                            continue;
+                        }else{
+                            //sets position of object Instance randomly, relative to center of group object
+                            generatedItem.transform.Translate(new Vector3(
+                                Random.Range(-group.groupArea/2f,group.groupArea/2f),
+                                0f,
+                                Random.Range(-group.groupArea/2f,group.groupArea/2f)
+                            ));
+                            attempts++;
+                        }
+                    }
+
+                }
             }   
         }
     }
